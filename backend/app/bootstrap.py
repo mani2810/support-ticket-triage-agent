@@ -84,11 +84,10 @@ def init_db() -> None:
     if s.environment == "test":
         Base.metadata.create_all(engine)
         return
+    from alembic import command
     from alembic.config import Config
     from alembic.runtime.migration import MigrationContext
     from alembic.script import ScriptDirectory
-
-    from alembic import command
 
     from .core.config import BACKEND_DIR
 

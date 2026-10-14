@@ -1,0 +1,11 @@
+# One lint configuration for CI, terminals and editors (results no longer depend on the working directory).
+line-length = 120
+src = ["backend", "frontend"]
+extend-exclude = ["backend/alembic/versions"]
+
+[lint]
+select = ["E", "F", "W", "I"]
+
+[lint.isort]
+known-first-party = ["app", "tests", "api_client", "session_cookie", "ui"]
+known-third-party = ["alembic"]          # the local backend/alembic/ folder holds migrations, not the package
