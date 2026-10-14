@@ -1,0 +1,11 @@
+[server]
+# Local-only by default. To share on your LAN on purpose:  streamlit run app.py --server.address 0.0.0.0
+address = "localhost"
+port = 8501
+headless = true
+# Poll for code changes: OS file events are unreliable in OneDrive/network folders, which made the
+# running app keep serving stale code after edits.
+fileWatcherType = "poll"
+
+[browser]
+gatherUsageStats = false
